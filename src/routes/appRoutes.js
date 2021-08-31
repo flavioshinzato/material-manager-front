@@ -11,6 +11,15 @@ const routes = new Router({
       redirect: '/home',
     },
     {
+      path: '/register',
+      name: 'register',
+      component: () => import('@/views/Register.vue'),
+      meta: {
+        needToolbar: true,
+        icon: 'mdi-arrow-left',
+      },
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('@/views/Login.vue'),
@@ -23,7 +32,6 @@ const routes = new Router({
       name: 'home',
       component: () => import('@/views/Home.vue'),
       meta: {
-        requiresAuth: true,
         needToolbar: true,
       },
     },

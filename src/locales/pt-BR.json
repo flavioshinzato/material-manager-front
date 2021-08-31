@@ -1,0 +1,44 @@
+{
+  "message": "hello i18n !!",
+  "app_name": "Vue Template",
+  "errors": {
+  	"default_error": "Algo deu errado ao processar sua requisição",
+  	"session_expired": "Você foi desconectado",
+    "not_found_error": "Não encontrado"
+  },
+  "views": {
+    "home": {
+      "go_to_login": "Entrar",
+      "go_to_register": "Registar",
+      "login_facebook": "Login com Facebook"
+    },
+    "login": {
+      "title": "Entrar",
+      "info": "Entre com seu email e senha."
+    },
+    "register": {
+      "title": "Registrar"
+    }
+  },
+  "components": {
+    "snackbar": {
+      "close": "X"
+    },
+    "labels": {
+      "name": "Nome",
+      "email": "E-mail",
+      "password": "Senha",
+      "confirm_password": "Confirmar senha"
+    },
+  	"login_form": {
+  		"login_btn": "Entrar",
+      "fb_login_btn": "Logar com FB",
+      "google_login_btn": "Logar com google",
+      "apple_login_btn": "Logar com a apple",
+      "do_not_have_account": "Não possui conta?"
+  	},
+    "register_form": {
+      "register_btn": "Registrar"
+    }
+  }
+}

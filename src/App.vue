@@ -1,31 +1,53 @@
 <template>
-  <div id="app">
-    <img
-      alt="Vue logo"
-      src="./assets/logo.png"
-    >
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <toolbar-nav v-if="needToolbar" />
+    <loading />
+    <v-content id="main-app">
+      <v-container fluid>
+        <router-view />
+      </v-container>
+    </v-content>
+    <snackbar />
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import { mapGetters } from 'vuex';
+
+import ToolbarNav from './components/navs/ToolbarNav.vue';
+import Loading from './components/feedbacks/Loading.vue';
+import Snackbar from './components/feedbacks/Snackbar.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    ToolbarNav,
+    Loading,
+    Snackbar,
+  },
+  data() {
+    return {
+      drawer: false,
+    };
+  },
+  computed: {
+    ...mapGetters([
+      'hasSession',
+      'currentUser',
+      'hasMessage',
+    ]),
+    needToolbar() {
+      return (this.$route.meta.needToolbar || this.hasSession);
+    },
+  },
+  watch: {
+    hasSession(hasSession) {
+      if (!hasSession) {
+        this.$router.push('/login');
+      } else {
+        this.$router.push('/home');
+      }
+    },
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
