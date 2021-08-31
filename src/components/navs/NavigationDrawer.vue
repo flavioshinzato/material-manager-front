@@ -2,10 +2,6 @@
   <div>
     <v-list class="pa-1">
       <v-list-item>
-        <v-list-item-avatar>
-          <img src="https://randomuser.me/api/portraits/men/85.jpg">
-        </v-list-item-avatar>
-
         <v-list-item-content>
           <v-list-item-title>{{ user.name }}</v-list-item-title>
         </v-list-item-content>
@@ -42,6 +38,7 @@ export default {
   data() {
     return {
       items: [
+        { title: 'Admin Login', icon: 'mdi-login', action: 'login' },
         { title: 'Sair', icon: 'mdi-close', action: 'logout' },
       ],
     };

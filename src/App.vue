@@ -2,11 +2,11 @@
   <v-app>
     <toolbar-nav v-if="needToolbar" />
     <loading />
-    <v-content id="main-app">
+    <v-app id="main-app">
       <v-container fluid>
         <router-view />
       </v-container>
-    </v-content>
+    </v-app>
     <snackbar />
   </v-app>
 </template>

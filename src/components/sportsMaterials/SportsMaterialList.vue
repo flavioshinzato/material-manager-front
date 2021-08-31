@@ -2,21 +2,26 @@
   <v-row>
     <v-col col="10">
       <div>
-        <p> teste </p>
+        <p> {{ getSportsMaterials }} </p>
       </div>
     </v-col>
   </v-row>
 </template>/>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'LoginForm',
 
+  computed: {
+    ...mapGetters(['getSportsMaterials']),
+  },
+
   mounted() {
     this.fetchSportsMaterials();
   },
+
   methods: {
     ...mapActions(['fetchSportsMaterials']),
   },

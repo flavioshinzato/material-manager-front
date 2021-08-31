@@ -1,6 +1,5 @@
 <template>
   <div class="text-center">
-    <h1>Sports Material Manager</h1>
     <sports-material-list />
   </div>
 </template>

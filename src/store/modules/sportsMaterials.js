@@ -1,7 +1,7 @@
 import SportsMaterials from '@/api/resources/sportsMaterials';
 
 const state = {
-  sportsMaterials: null,
+  sportsMaterials: [],
 };
 
 const getters = {
@@ -9,8 +9,8 @@ const getters = {
 };
 
 const actions = {
-  fetchSportsMaterials({ commit, dispatch }, payload) {
-    SportsMaterials.index(payload).then((response) => {
+  fetchSportsMaterials({ commit, dispatch }) {
+    SportsMaterials.index().then((response) => {
       commit('setSportsMaterials', response);
       dispatch('removeLoading');
     });
