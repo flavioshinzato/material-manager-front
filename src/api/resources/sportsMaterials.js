@@ -1,7 +1,7 @@
 import ApiService from '../api.service';
 
 const SportsMaterials = {
-  index: () => ApiService.get('/sports_materials'),
+  index: (params) => ApiService.query('/sports_materials', params),
 };
 
 export default SportsMaterials;

@@ -9,8 +9,8 @@ const getters = {
 };
 
 const actions = {
-  fetchSportsMaterials({ commit, dispatch }) {
-    SportsMaterials.index().then((response) => {
+  fetchSportsMaterials({ commit, dispatch }, payload) {
+    SportsMaterials.index(payload).then((response) => {
       commit('setSportsMaterials', response);
       dispatch('removeLoading');
     });

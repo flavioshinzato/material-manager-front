@@ -1,37 +1,37 @@
 <template>
-  <v-row>
-    <v-col
-      v-for="(material, index) in sportsMaterials"
-      :key="index"
-      cols="12"
+  <v-card
+    class="mx-auto"
+    max-width="400"
+  >
+    <v-img
+      class="white--text align-end"
+      height="200px"
+      :src="image(sportsMaterial)"
     >
-      <v-card
-        class="mx-auto"
-        max-width="400"
-      >
-        <v-img
-          class="white--text align-end"
-          height="200px"
-          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-        >
-          <v-card-title> {{ material.title }} </v-card-title>
-        </v-img>
+      <v-card-title> {{ sportsMaterial.title }} </v-card-title>
+    </v-img>
 
-        <v-card-text class="text--primary">
-          <div>{{ material.description }}}</div>
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
+    <v-card-text class="text--primary">
+      <div>{{ sportsMaterial.description }}</div>
+    </v-card-text>
+  </v-card>
 </template>/>
 
 <script>
 export default {
   name: 'SportsMaterialsCard',
   props: {
-    sportsMaterials: {
-      type: Array,
-      default: () => [],
+    sportsMaterial: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  methods: {
+    image(material) {
+      if (!material.image) {
+        return 'https://cdn.vuetifyjs.com/images/cards/docks.jpg';
+      }
+      return material.image;
     },
   },
 };
