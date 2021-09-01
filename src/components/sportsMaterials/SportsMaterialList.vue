@@ -38,7 +38,7 @@ import { mapGetters, mapActions } from 'vuex';
 import SportsMateriaslCard from './SportsMateriaslCard.vue';
 
 export default {
-  name: 'LoginForm',
+  name: 'SportsMaterialsList',
   components: { SportsMateriaslCard },
   data() {
     return {
