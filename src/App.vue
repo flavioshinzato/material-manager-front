@@ -32,21 +32,10 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'hasSession',
-      'currentUser',
       'hasMessage',
     ]),
     needToolbar() {
       return (this.$route.meta.needToolbar || this.hasSession);
-    },
-  },
-  watch: {
-    hasSession(hasSession) {
-      if (!hasSession) {
-        this.$router.push('/login');
-      } else {
-        this.$router.push('/home');
-      }
     },
   },
 };
