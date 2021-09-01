@@ -1,8 +1,6 @@
 ## Dependências
 
  - Node v14.16.1
-    - Caso não tenha o Node instalado em sua máquina, recomendamos o uso do [NVM](https://github.com/creationix/nvm) para a instalação do mesmo.
- - Git e Git Flow
  - Vue >= 2.5.21
  - NPM >= 5.6.0
 ## Configurações
@@ -26,3 +24,5 @@ $ npm install
 ```bash
 $ npm run serve
 ```
+Servidor estará disponível no endereço http://localhost:8000. Necessário rodar a api disponível no link
+https://github.com/flavioshinzato/material-manager-api
